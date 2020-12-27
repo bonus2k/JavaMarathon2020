@@ -25,7 +25,7 @@ public class Task1 {
             if (array[i] > 8) countMax8++;
             if (array[i] == 1) countOne++;
             if (array[i] % 2 == 0) countEven++;
-            if (array[i] % 2 != 0) countUneven++;
+            else countUneven++;
             sumArray += array[i];
         }
 
