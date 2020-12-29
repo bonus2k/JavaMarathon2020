@@ -3,8 +3,8 @@ package day6;
 import java.util.Random;
 
 public class Teacher {
-    private final String name;
-    private final String subject;
+    private String name;
+    private String subject;
 
     public Teacher(String name, String subject) {
         this.name = name;
