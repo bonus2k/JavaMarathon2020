@@ -13,11 +13,11 @@ public class Warehouse {
     }
 
     public void countPickedOrders() {
-        countPickedOrders+=1;
+        countPickedOrders += 1;
     }
 
     public void countDeliveredOrders() {
-        countDeliveredOrders+=1;
+        countDeliveredOrders += 1;
     }
 
     @Override
