@@ -6,11 +6,4 @@ public class Warrior extends Hero implements PhysAttack {
         super(100, 80, 0, 30, 0);
     }
 
-    @Override
-    public void physicalAttack(Hero hero) {
-        int health = this.getPhysAtt() - (int)
-                (this.getPhysAtt() * (hero.getPhysDef() / 100d));
-        hero.diffHealth((-1) * health);
-    }
-
 }

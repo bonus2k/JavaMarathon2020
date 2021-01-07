@@ -17,11 +17,4 @@ public class Paladin extends Hero implements PhysAttack, Healer {
         hero.diffHealth(10);
     }
 
-    @Override
-    public void physicalAttack(Hero hero) {
-        int health = this.getPhysAtt() - (int)
-                (this.getPhysAtt() * (hero.getPhysDef() / 100d));
-        hero.diffHealth((-1) * health);
-    }
-
 }

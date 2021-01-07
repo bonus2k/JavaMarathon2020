@@ -1,6 +1,6 @@
 package day11.task2;
 
-public abstract class Hero {
+public abstract class Hero implements PhysAttack{
     public final Integer MAX_HEALTH = 100;
     public final Integer MIN_HEALTH = 0;
     private Integer health;     //(здоровье)
@@ -39,6 +39,13 @@ public abstract class Hero {
 
     public Integer getMagicAtt() {
         return magicAtt;
+    }
+
+    @Override
+    public void physicalAttack(Hero hero) {
+        int health = this.getPhysAtt() - (int)
+                (this.getPhysAtt() * (hero.getPhysDef() / 100d));
+        hero.diffHealth((-1) * health);
     }
 
     @Override
