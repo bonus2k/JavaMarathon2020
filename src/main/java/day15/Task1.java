@@ -15,6 +15,7 @@ public class Task1 {
             while (scanner.hasNext()) {
                 String str = scanner.nextLine();
                 if (str.matches(".+;0$")) {
+                    str = str.replaceAll(";", ", ");
                     printWriter.println(str);
                 }
             }
