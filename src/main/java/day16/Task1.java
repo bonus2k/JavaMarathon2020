@@ -14,14 +14,15 @@ public class Task1 {
         double countSum = 0.0;
         try (Scanner scanner = new Scanner(file)) {
             input = scanner.nextLine();
+            String[] arrayInput = input.split(" ");
+            for (String digit : arrayInput) {
+                countSum += Double.parseDouble(digit);
+            }
+            countSum /= arrayInput.length;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        String[] arrayInput = input.split(" ");
-        for (String digit : arrayInput) {
-            countSum += Double.parseDouble(digit);
-        }
-        countSum /= arrayInput.length;
+
         System.out.printf(countSum + " --> %.3f", countSum);
     }
 }

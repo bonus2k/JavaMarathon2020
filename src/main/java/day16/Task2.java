@@ -3,10 +3,7 @@ package day16;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class Task2 {
     public static void main(String[] args) {
@@ -48,26 +45,27 @@ public class Task2 {
         StringJoiner sj = new StringJoiner(" ");
         int count = 0;
         double sum = 0;
-        try (Scanner scanner = new Scanner(file1)) {
+        try (Scanner scanner = new Scanner(file1);
+             PrintWriter printWriter = new PrintWriter(file2)) {
+
             allNumbers = scanner.nextLine().split(" ");
+
+            for (String numbers : allNumbers) {
+                if (count < 20) {
+                    sum += Integer.parseInt(numbers);
+                    count++;
+                } else {
+                    sj.add(sum / 20 + "");
+                    count = 0;
+                    sum = 0;
+                }
+            }
+
+            printWriter.println(sj);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-
-        for (String numbers : allNumbers) {
-            if (count < 20) {
-                sum += Integer.parseInt(numbers);
-                count++;
-            } else {
-                sj.add(sum / 20 + "");
-                count = 0;
-                sum = 0;
-            }
-        }
-
-        try (PrintWriter printWriter = new PrintWriter(file2)) {
-            printWriter.print(sj);
-        } catch (FileNotFoundException e) {
+        } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
     }
